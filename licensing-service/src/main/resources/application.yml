@@ -1,0 +1,9 @@
+management:
+    endpoint:
+        health:
+            show-details: always
+            diskspace:
+                enabled: true
+        env:
+            show-details: always
+            enabled: true

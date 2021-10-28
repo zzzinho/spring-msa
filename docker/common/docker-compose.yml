@@ -1,0 +1,6 @@
+version: '2'
+services:
+  licensingservice:
+    image: zzzinho/licensing-service:chapter2
+    prots:
+      - "8080:8080"
