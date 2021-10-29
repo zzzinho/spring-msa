@@ -5,6 +5,7 @@ spring:
         config:
             server:
                 git:
+                    default-label: main
                     uri: https://github.com/zzzinho/spring-msa
                     searchPaths: licensingservice,organizationservice
                     # username: native-cloud-apps
