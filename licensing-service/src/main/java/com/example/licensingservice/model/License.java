@@ -15,7 +15,7 @@ import lombok.Setter;
 public class License {
     @Id
     @Column(name="license_id", nullable=false)
-    private String id;
+    private String licenseId;
     @Column(name="organization_id", nullable=false)
     private String organizationId;
     @Column(name="product_name", nullable=false)
@@ -30,7 +30,7 @@ public class License {
     private String Comment;
 
     public License withId(String id){
-        this.setId(id);
+        this.setLicenseId(id);
         return this;
     }
     

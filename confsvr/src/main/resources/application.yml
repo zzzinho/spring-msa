@@ -10,4 +10,4 @@ spring:
                     searchPaths: config/licensingservice, config/organizationservice
                     # username: native-cloud-apps
                     # password: 0ffended
-                encrypt.enabled: true
+                encrypt.enabled: false
