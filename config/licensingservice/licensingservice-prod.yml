@@ -1,14 +1,24 @@
-example.property: "I AM A PROD PROPERTY OVERRIDE"
-spring.jpa.database: "MYSQL"
-spring.datasource.platform:  "mysql"
-spring.jpa.show-sql: "true"
-spring.database.driverClassName: "org.mysql.Driver"
-spring.datasource.url: jdbc:mysql://db-warm-micro.c8bsxpdjb1j7.ap-northeast-2.rds.amazonaws.com:3306/practice
-spring.datasource.username: "admin"
-spring.datasource.password: "{cipher}35734364183345d9a9a4238302fd099caa3151bd0ee59fb5d445c2e183ed0c29"
-spring.datasource.testWhileIdle: "true"
-spring.datasource.validationQuery: "SELECT 1"
-spring.jpa.properties.hibernate.dialect: "org.hibernate.dialect.MySQL5Dialect"
-redis.server: "redis"
-redis.port: "6379"
-signing.key: "345345fsdfsf5345"
+example:
+    property: "I AM A PROD PROPERTY OVERRIDE"
+spring:
+  jpa:
+    database: "MYSQL"
+    show-sql: "false"
+    properties:
+      hibernate:
+        # dialect: "org.hibernate.dialect.MySQLDialect"
+        ddl-auto: "update"
+  datasource:
+    platform:  "mysql"
+    url: jdbc:mysql://db-warm-micro.c8bsxpdjb1j7.ap-northeast-2.rds.amazonaws.com:3306/practice
+    username: "admin"
+    password: "{cipher}35734364183345d9a9a4238302fd099caa3151bd0ee59fb5d445c2e183ed0c29"
+    testWhileIdle: "true"
+    validationQuery: "SELECT 1"
+  database:
+    driverClassName: "org.mysql.Driver"
+redis:
+  server: "redis"
+  port: "6379"
+signing:
+  key: "345345fsdfsf5345"
