@@ -1,5 +1,7 @@
 example:
   property: "I AM IN THE ORGANIZATION DEFAULT"
+server:
+  port: 8085
 spring:
   jpa:
     database: "MYSQL"
@@ -10,7 +12,6 @@ spring:
       hibernate:
         # dialect: "org.hibernate.dialect.MySQLDialect"
         ddl-auto: "update"
-  port: 8085
   datasource:
     platform:  "mysql"
     url: jdbc:mysql://db-warm-micro.c8bsxpdjb1j7.ap-northeast-2.rds.amazonaws.com:3306/practice
