@@ -1,0 +1,23 @@
+example:
+  property: "I AM IN THE ORGANIZATION DEFAULT"
+spring:
+  jpa:
+    database: "MYSQL"
+    show-sql: "false"
+    hibernate:
+      ddl-auto: "update"
+    properties:
+      hibernate:
+        # dialect: "org.hibernate.dialect.MySQLDialect"
+        ddl-auto: "update"
+  datasource:
+    platform:  "mysql"
+    url: jdbc:mysql://db-warm-micro.c8bsxpdjb1j7.ap-northeast-2.rds.amazonaws.com:3306/practice
+    username: "admin"
+    password: "{cipher}35734364183345d9a9a4238302fd099caa3151bd0ee59fb5d445c2e183ed0c29"
+    testWhileIdle: "true"
+    validationQuery: "SELECT 1"
+  database:
+    driverClassName: "org.mysql.Driver"
+signing:
+  key: "345345fsdfsf5345"
