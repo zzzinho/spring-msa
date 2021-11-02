@@ -1,4 +1,4 @@
-package com.example.organizationservice;
+package com.example.organizationservice.repository;
 
 import com.example.organizationservice.model.Organization;
 

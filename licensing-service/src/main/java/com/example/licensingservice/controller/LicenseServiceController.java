@@ -41,4 +41,9 @@ public class LicenseServiceController {
     public String deleteLicense(@PathVariable("licenseId") String licenseId){
         return String.format("this is delete");
     }
+
+    @RequestMapping(path = "/{licenseId}/[clientType]", method = RequestMethod.GET)
+    public License getLicenseWithClient(@PathVariable("organizationId") String organizationId, @PathVariable("licenseId") String licenseId, @PathVariable("clientType") String clientType){
+        return LicenseService.getLicense(organizationId, licenseId, clientType);
+    }
 }
