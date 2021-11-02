@@ -1,10 +1,10 @@
-package com.example.organization;
+package com.example.organizationservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class OrganizationApplicationTests {
+class OrganizationServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
