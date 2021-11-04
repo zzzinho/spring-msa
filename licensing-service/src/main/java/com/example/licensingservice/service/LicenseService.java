@@ -33,7 +33,6 @@ public class LicenseService {
     @Autowired
     private OrganizationDiscoveryClient organizationDiscoveryClient;
 
-    @Autowired
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     private Organization retrieveOrgInfo(String organizationId, String clientType) {
