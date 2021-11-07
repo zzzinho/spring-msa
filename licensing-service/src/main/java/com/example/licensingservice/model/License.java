@@ -2,8 +2,6 @@ package com.example.licensingservice.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
@@ -17,8 +15,7 @@ import lombok.Setter;
 @Table(name="licenses")
 public class License {
     @Id
-    // @Column(name="license_id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="license_id", nullable = false)
     private String licenseId;
     @Column(name="organization_id", nullable=false)
     private String organizationId;
