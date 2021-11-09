@@ -12,6 +12,7 @@ import com.example.licensingservice.config.ServiceConfig;
 import com.example.licensingservice.model.License;
 import com.example.licensingservice.model.Organization;
 import com.example.licensingservice.repository.LicenseRepository;
+import com.example.licensingservice.utils.UserContextHolder;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
@@ -72,7 +73,7 @@ public class LicenseService {
         }
         return organization;
     }
-
+    
     public License getLicense(String organizationId, String licenseId, String clientType){
         License license = licenseRepository.findByOrganizationIdAndLicenseId(organizationId, licenseId);
         Organization org = getOrganization(organizationId, clientType);
@@ -102,8 +103,8 @@ public class LicenseService {
         }
     )
     public List<License> getLicensesByOrg(String organizationId){
-        // logger.debug("LicenseService.getLicenseByOrg Correlation id: {}", UserContextHolder.getContext().get);
-        // randomlyRunLong();
+        logger.info("LicenseService.getLicenseByOrg Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
+        randomlyRunLong();
         return licenseRepository.findByOrganizationId(organizationId);   
     }
 

@@ -4,7 +4,10 @@ import java.util.List;
 
 import com.example.licensingservice.model.License;
 import com.example.licensingservice.service.LicenseService;
+import com.example.licensingservice.utils.UserContextHolder;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +24,11 @@ public class LicenseServiceController {
     @Autowired
     private LicenseService licenseService;
 
+    private static final Logger logger = LoggerFactory.getLogger(LicenseServiceController.class);
+
     @RequestMapping(value = "", method = RequestMethod.GET)
     public List<License> getLicenses(@PathVariable("organizationId") String organizationId){
+        logger.info("LicenseServiceController Correlation id: {}", UserContextHolder.getContext().getCorrelationId());
         return licenseService.getLicensesByOrg(organizationId);
     }
 
