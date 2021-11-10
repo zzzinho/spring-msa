@@ -1,6 +1,7 @@
 package com.example.organizationservice.service;
 
 import java.util.Optional;
+import java.util.UUID;
 
 import com.example.organizationservice.model.Organization;
 import com.example.organizationservice.repository.OrganizationRepository;
@@ -22,6 +23,7 @@ public class OrganizationService {
     }
 
     public void saveOrg(Organization org){
+        org.withId(UUID.randomUUID().toString());
         organizationRepository.save(org);
     }
     

@@ -24,4 +24,9 @@ public class Organization {
     private String contactEmail;
     @Column(name = "contact_phone", nullable = false)
     private String contactPhone;
+
+    public Organization withId(String id){
+        this.setId(id);
+        return this;
+    }
 }
