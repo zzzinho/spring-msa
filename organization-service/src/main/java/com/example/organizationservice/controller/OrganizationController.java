@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping(path = "v1/organizations")
+@RequestMapping(path = "/organization/v1")
 public class OrganizationController {
     @Autowired
     private OrganizationService organizationService;
