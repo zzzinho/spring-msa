@@ -3,6 +3,7 @@ package com.example.organizationservice.service;
 import java.util.Optional;
 import java.util.UUID;
 
+import com.example.organizationservice.events.source.SimpleSourceBean;
 import com.example.organizationservice.model.Organization;
 import com.example.organizationservice.repository.OrganizationRepository;
 
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Service;
 public class OrganizationService {
     @Autowired
     private OrganizationRepository organizationRepository;
+
+    @Autowired
+    private SimpleSourceBean simpleSourceBean;
 
     public Organization getOrg(String organizationId) {
         Optional<Organization> organization = organizationRepository.findById(organizationId);
@@ -25,13 +29,16 @@ public class OrganizationService {
     public void saveOrg(Organization org){
         org.withId(UUID.randomUUID().toString());
         organizationRepository.save(org);
+        simpleSourceBean.publishOrgChange("SAVE", org.getId());
     }
     
     public void updateOrg(Organization org){
         organizationRepository.save(org);
+        simpleSourceBean.publishOrgChange("UPDATE", org.getId());
     }
 
-    public void delelteOrg(Organization org){
-        organizationRepository.delete(org);
+    public void delelteOrg(String orgId){
+        organizationRepository.deleteById(orgId);
+        simpleSourceBean.publishOrgChange("DELETE", orgId);
     }
 }

@@ -43,8 +43,8 @@ public class OrganizationController {
 
     @RequestMapping(value="/{organizationId}", method=RequestMethod.DELETE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteOrganization(@PathVariable("organizationId") String organizationId, @RequestBody Organization org) {
-        organizationService.delelteOrg(org);
+    public void deleteOrganization(@PathVariable("organizationId") String organizationId) {
+        organizationService.delelteOrg(organizationId);
     }
     
     @RequestMapping(value = "/world", method = RequestMethod.GET)
