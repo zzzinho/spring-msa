@@ -14,9 +14,9 @@ spring:
         ddl-auto: "update"
   datasource:
     platform:  "mysql"
-    url: jdbc:mysql://db-warm-micro.c8bsxpdjb1j7.ap-northeast-2.rds.amazonaws.com:3306/practice
+    url: jdbc:mysql://jinho-db.crrywx8kuivs.ap-northeast-2.rds.amazonaws.com:3306/jinho
     username: "admin"
-    password: "{cipher}35734364183345d9a9a4238302fd099caa3151bd0ee59fb5d445c2e183ed0c29"
+    password: "{cipher}749244292eb7740fa7d9674d0386fcc4b7f37a2885bf9c4f286a422b07c7e2ef"
     testWhileIdle: "true"
     validationQuery: "SELECT 1"
   database:
